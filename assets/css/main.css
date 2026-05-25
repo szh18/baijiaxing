@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-rice text-ink font-serif;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c5a9' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer components {
+  .chinese-seal {
+    @apply inline-block border-2 border-seal text-seal px-3 py-1 font-bold text-sm tracking-widest;
+    font-family: 'Ma Shan Zheng', cursive;
+  }
+
+  .surname-card {
+    @apply bg-white/70 border border-amber-200 rounded-sm
+           flex flex-col items-center justify-center
+           cursor-pointer transition-all duration-200
+           hover:shadow-lg hover:border-vermilion hover:bg-white/90
+           hover:-translate-y-0.5;
+  }
+
+  .surname-char {
+    @apply text-4xl md:text-5xl;
+    font-family: 'Ma Shan Zheng', cursive;
+  }
+
+  .prose-chinese {
+    @apply text-base leading-loose tracking-wide text-ink/85;
+    text-indent: 2em;
+  }
+
+  .section-title {
+    @apply text-xl font-bold border-b-2 border-amber-300 pb-2 mb-4 text-ink;
+  }
+
+  .filter-btn {
+    @apply px-3 py-1.5 text-sm rounded-sm border border-amber-300
+           bg-white/60 hover:bg-vermilion hover:text-white hover:border-vermilion
+           transition-colors duration-150 cursor-pointer;
+  }
+
+  .filter-btn.active {
+    @apply bg-vermilion text-white border-vermilion;
+  }
+
+  .search-input {
+    @apply w-full max-w-xl px-6 py-4 text-lg rounded-sm
+           border-2 border-amber-300 bg-white/80
+           focus:outline-none focus:border-vermilion
+           placeholder:text-amber-400/60 text-center;
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .dynasty-tag {
+    @apply inline-block px-2 py-0.5 text-xs rounded-sm
+           bg-amber-100/70 text-amber-900 border border-amber-300;
+  }
+}
