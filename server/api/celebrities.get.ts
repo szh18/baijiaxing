@@ -1,7 +1,8 @@
-import { db, schema } from '../db/client'
+import { getDb, schema } from '../db/client'
 import { and, eq, sql } from 'drizzle-orm'
 
 export default defineEventHandler(async (event) => {
+  const db = getDb()
   const query = getQuery(event)
   const conditions = []
 

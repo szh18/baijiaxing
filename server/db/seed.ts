@@ -1,7 +1,8 @@
-import { db, schema } from './client'
+import { getDb, schema } from './client'
 import { seedSurnames, seedCelebrities } from './seed-data'
 
 async function seed() {
+  const db = getDb()
   console.log('Clearing existing data...')
   await db.delete(schema.celebrities)
   await db.delete(schema.surnames)

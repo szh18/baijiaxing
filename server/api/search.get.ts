@@ -1,7 +1,8 @@
-import { db, schema } from '../db/client'
+import { getDb, schema } from '../db/client'
 import { or, ilike } from 'drizzle-orm'
 
 export default defineEventHandler(async (event) => {
+  const db = getDb()
   const q = String(getQuery(event).q || '').trim()
   if (!q) return { data: [], total: 0 }
 

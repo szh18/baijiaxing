@@ -1,7 +1,8 @@
-import { db, schema } from '../../db/client'
+import { getDb, schema } from '../../db/client'
 import { eq } from 'drizzle-orm'
 
 export default defineEventHandler(async (event) => {
+  const db = getDb()
   const id = getRouterParam(event, 'id')
   if (!id) throw createError({ statusCode: 400, message: 'id required' })
 
